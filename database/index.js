@@ -6,3 +6,6 @@ var connection = mysql.createConnection({
     password: 'Hello123',
     database: 'sourcing'
 });
+
+connection.connect();
+

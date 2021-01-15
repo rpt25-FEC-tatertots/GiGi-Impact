@@ -1,5 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Materials from './components/Materials.jsx';
+import Locations from './components/Locations.jsx';
 
+class App extends React.Component {
+  constructor() {
+    super();
+  }
 
-ReactDOM.render(<h1>Hello World</h1>, document.getElementById('sourcing'));
+  render() {
+    return (
+      <div>
+        <h1>Hello World</h1>
+        <Materials />
+        <Locations />
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('sourcing'));
