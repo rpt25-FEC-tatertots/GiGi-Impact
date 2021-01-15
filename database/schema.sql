@@ -79,7 +79,7 @@ CREATE TABLE locations_products (
 );
 
 /*  Execute this file from the command line by typing:
- *    mysql -u root < server/schema.sql
+ *    mysql -u root -pHello123< database/schema.sql
  *  to create the database and the tables.*/
 
 
