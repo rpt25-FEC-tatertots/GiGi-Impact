@@ -89,8 +89,23 @@ const insertIntoMatProd = (dataSet) => {
   return Promise.all(promiseArray);
 }
 
+const getProducts = () => {
+  return new Promise ((resolve, reject) => {
+    return connection.query(`select * from products`, (error, result) => {
+      if(error) {
+        console.log('👎🏽 error getting from products');
+        reject(error)
+      } else {
+        console.log('👍🏽 success in getting data from products');
+        resolve(result);
+      }
+    })
+  })
+}
+
 module.exports.insertIntoProducts = insertIntoProducts;
 module.exports.insertIntoLocations = insertIntoLocations;
 module.exports.insertIntoMaterials = insertIntoMaterials;
 module.exports.insertIntoLocProd = insertIntoLocProd;
 module.exports.insertIntoMatProd = insertIntoMatProd;
+module.exports.getProducts = getProducts;
