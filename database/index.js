@@ -1,10 +1,10 @@
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Hello123',
-    database: 'sourcing'
+  host: 'localhost',
+  user: 'root',
+  password: 'Hello123',
+  database: 'sourcing'
 });
 
 connection.connect();
@@ -12,7 +12,7 @@ connection.connect();
 const insertIntoProducts = (dataSet) => {
   return dataSet.forEach(data => {
     return connection.query(`INSERT INTO products (prod_name, prod_desc) VALUES ("${data[0]}", "${data[1]}")`, (err, result) => {
-      if(err) {
+      if (err) {
         console.log(err, 'Error inserting into database')
       } else {
         console.log('success inserting into database');
@@ -23,14 +23,14 @@ const insertIntoProducts = (dataSet) => {
 
 const insertIntoLocations = (dataSet) => {
   let promiseArray = dataSet.map(data => {
-    return new Promise ((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       return connection.query(`INSERT INTO locations (loc_name, loc_pic) VALUES ("${data[0]}", "${data[1]}")`, (error, result) => {
         if (error) {
-            console.log(error, 'error inserting into locations table');
-            reject(error)
+          console.log(error, 'error inserting into locations table');
+          reject(error)
         } else {
-            console.log('successfully inserted into the locations table')
-            resolve(result);
+          console.log('successfully inserted into the locations table')
+          resolve(result);
         }
       });
     })
@@ -40,14 +40,14 @@ const insertIntoLocations = (dataSet) => {
 
 const insertIntoMaterials = (dataSet) => {
   let promiseArray = dataSet.map(data => {
-    return new Promise ((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       return connection.query(`INSERT INTO materials (mat_name, mat_desc) VALUES ("${data[0]}", "${data[1]}")`, (error, result) => {
         if (error) {
-            console.log(error, 'error inserting into materials table');
-            reject(error)
+          console.log(error, 'error inserting into materials table');
+          reject(error)
         } else {
-            console.log('successfully inserted into the materials table')
-            resolve(result);
+          console.log('successfully inserted into the materials table')
+          resolve(result);
         }
       });
     })
@@ -57,14 +57,14 @@ const insertIntoMaterials = (dataSet) => {
 
 const insertIntoLocProd = (dataSet) => {
   let promiseArray = dataSet.map(data => {
-    return new Promise ((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       return connection.query(`INSERT INTO locations_products (prod_id, loc_id) VALUES ("${data[0]}", "${data[1]}")`, (error, result) => {
         if (error) {
-            console.log(error, 'error inserting into loc_prod table');
-            reject(error)
+          console.log(error, 'error inserting into loc_prod table');
+          reject(error)
         } else {
-            console.log('successfully inserted into the loc_prod table')
-            resolve(result);
+          console.log('successfully inserted into the loc_prod table')
+          resolve(result);
         }
       });
     })
@@ -74,14 +74,14 @@ const insertIntoLocProd = (dataSet) => {
 
 const insertIntoMatProd = (dataSet) => {
   let promiseArray = dataSet.map(data => {
-    return new Promise ((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       return connection.query(`INSERT INTO materials_products (prod_id, mat_id) VALUES ("${data[0]}", "${data[1]}")`, (error, result) => {
         if (error) {
-            console.log(error, 'error inserting into mat_prod table');
-            reject(error)
+          console.log(error, 'error inserting into mat_prod table');
+          reject(error)
         } else {
-            console.log('successfully inserted into the mat_prod table')
-            resolve(result);
+          console.log('successfully inserted into the mat_prod table')
+          resolve(result);
         }
       });
     })
@@ -90,9 +90,9 @@ const insertIntoMatProd = (dataSet) => {
 }
 
 const getProducts = () => {
-  return new Promise ((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     return connection.query(`select * from products`, (error, result) => {
-      if(error) {
+      if (error) {
         console.log('👎🏽 error getting from products');
         reject(error)
       } else {
@@ -103,9 +103,12 @@ const getProducts = () => {
   })
 }
 
-module.exports.insertIntoProducts = insertIntoProducts;
-module.exports.insertIntoLocations = insertIntoLocations;
-module.exports.insertIntoMaterials = insertIntoMaterials;
-module.exports.insertIntoLocProd = insertIntoLocProd;
-module.exports.insertIntoMatProd = insertIntoMatProd;
-module.exports.getProducts = getProducts;
+
+module.exports = {
+  insertIntoProducts,
+  insertIntoLocations,
+  insertIntoMaterials,
+  insertIntoLocProd,
+  insertIntoMatProd,
+  getProducts
+};
