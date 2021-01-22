@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Materials from './components/Materials.jsx';
-import Locations from './components/Locations.jsx';
+import Materials from './components/materials.jsx';
+import Locations from './components/locations.jsx';
 
 class App extends React.Component {
   constructor() {
     super();
   }
-
+  
   render() {
     return (
       <div>

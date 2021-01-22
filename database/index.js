@@ -103,6 +103,24 @@ const getProducts = () => {
   })
 }
 
+const getOneProdLoc = (id) => {
+  return new Promise((resolve, reject) => {
+    return connection.query(`SELECT DISTINCT a.id, a.loc_name, a.loc_pic 
+      FROM locations a, locations_products b,  products c 
+      WHERE b.prod_id = c.id 
+      AND b.loc_id = a.id
+      AND c.id = ${id}`, (error, result) => {
+        if(error) {
+          console.log(error);
+          reject(error);
+        } else {
+          console.log(result);
+          resolve(result);
+        }
+      }); 
+  })
+}
+
 
 module.exports = {
   insertIntoProducts,
@@ -110,5 +128,6 @@ module.exports = {
   insertIntoMaterials,
   insertIntoLocProd,
   insertIntoMatProd,
-  getProducts
+  getProducts,
+  getOneProdLoc
 };
