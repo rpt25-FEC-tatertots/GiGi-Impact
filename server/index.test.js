@@ -9,3 +9,10 @@ test('get locations api test', async () => {
       expect(typeof response).toBe('object');
     });  
 });
+
+
+test('get locations for product not in database', async () => {
+  await request(app)
+    .get('/api/locations?product_id=101')
+    .expect(404)
+});

@@ -121,6 +121,7 @@ const getOneProdLoc = (id) => {
   })
 }
 
+
 module.exports = {
   insertIntoProducts,
   insertIntoLocations,
