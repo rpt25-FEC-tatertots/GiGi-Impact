@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react-dev": "webpack --watch",
-    "server-dev": "nodemon server/index.js",
+    "server-dev": "nodemon server/server.js",
     "seed": "node helpers/index.js",
-    "test-jest": "jest --watchAll --config=jestconfig.json"
+    "test-jest": "jest --watchAll --detectOpenHandles --runInBand --config=jestconfig.json"
   },
   "repository": {
     "type": "git",

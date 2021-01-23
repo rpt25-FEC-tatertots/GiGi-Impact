@@ -14,14 +14,8 @@ app.get('/api/locations', (req, res) => {
   }
   db.getOneProdLoc(productID)
     .then(data => res.send(data))
-    .catch(error => console.log(error))
+    .catch(error => res.sendState(404))
     //if error send status code of  404
 })
-
-let port = 6002
-
-app.listen(port, function () {
-    console.log(`listening on port ${port}`);
-});
 
 module.exports = app
