@@ -12,9 +12,10 @@ class Locations extends React.Component {
   }
 
   getProductById() {
-    const randIndex = Math.floor(Math.random() * 100) + 1;
+    let randIndex = Math.floor(Math.random() * 100) + 1;
     axios.get(`/api/locations?product_id=${randIndex}`)
       .then(response => this.setState({ locations: response.data }))
+      // .then(response => console.log('data on client 🇹🇭', response.data))
       .catch(error => console.log(error))
   }
 

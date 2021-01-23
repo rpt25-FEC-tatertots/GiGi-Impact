@@ -28,6 +28,7 @@ CREATE TABLE materials (
   id INTEGER AUTO_INCREMENT UNIQUE,
   mat_name VARCHAR(50) NOT NULL,
   mat_desc VARCHAR(150) NOT NULL,
+  mat_info VARCHAR(1024) NOT NULL,
   PRIMARY KEY (id)
 );
 
@@ -42,6 +43,7 @@ CREATE TABLE locations (
   id INTEGER AUTO_INCREMENT UNIQUE,
   loc_name VARCHAR(50) NOT NULL ,
   loc_pic VARCHAR(200) NOT NULL,
+  loc_company VARCHAR(50) NOT NULL,
   PRIMARY KEY (id)
 );
 

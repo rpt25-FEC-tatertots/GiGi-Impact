@@ -18,9 +18,11 @@ let prodUpdate = () => {
 let locUpdate = () => {
   let locationsArray = [];
   let locationName = faker.address.country;
-  let locationURL = faker.image.imageUrl;
+  let locationURL = faker.image.nature();
+  let locationCompany = faker.random.word;
+  // let locationURL = faker.image.imageUrl;
   for (let i = 0; i < 15; i ++) {
-      locationsArray.push([locationName(), locationURL()]);
+      locationsArray.push([locationName(), locationURL, locationCompany()]);
   }
   
   db.insertIntoLocations(locationsArray)
@@ -31,8 +33,9 @@ let matUpdate = () => {
   let materialsArray = [];
   let randMaterial = faker.commerce.productMaterial;
   let randMaterialDesc = faker.lorem.words;
+  let randomInfo = faker.random.words;
   for (let i = 0; i < 10; i ++) {
-      materialsArray.push([randMaterial(), randMaterialDesc(6)]);
+      materialsArray.push([randMaterial(), randMaterialDesc(6), randomInfo(30)]);
   }
   
   db.insertIntoMaterials(materialsArray)
@@ -47,7 +50,7 @@ let matProdUpdate = () => {
         return Math.floor(Math.random() * num) + 1;
     }
     let matProdArr = [];
-    for (var i = 0; i < 400; i ++) {
+    for (var i = 0; i < 200; i ++) {
       matProdArr.push([randomNum(100), randomNum(10)]);
     }
     db.insertIntoMatProd(matProdArr);
@@ -60,7 +63,7 @@ let locProdUpdate = () => {
         return Math.floor(Math.random() * num) + 1;
     }
     let locProdArr = [];
-    for (var i = 0; i < 500; i ++) {
+    for (var i = 0; i < 300; i ++) {
       locProdArr.push([randomNum(10), randomNum(15)]);
     }
     db.insertIntoLocProd(locProdArr)
