@@ -24,7 +24,7 @@ const insertIntoProducts = (dataSet) => {
 const insertIntoLocations = (dataSet) => {
   let promiseArray = dataSet.map(data => {
     return new Promise((resolve, reject) => {
-      return connection.query(`INSERT INTO locations (loc_name, loc_pic) VALUES ("${data[0]}", "${data[1]}")`, (error, result) => {
+      return connection.query(`INSERT INTO locations (loc_name, loc_pic, loc_company) VALUES ("${data[0]}", "${data[1]}", "${data[2]}")`, (error, result) => {
         if (error) {
           console.log(error, 'error inserting into locations table');
           reject(error)
@@ -41,7 +41,7 @@ const insertIntoLocations = (dataSet) => {
 const insertIntoMaterials = (dataSet) => {
   let promiseArray = dataSet.map(data => {
     return new Promise((resolve, reject) => {
-      return connection.query(`INSERT INTO materials (mat_name, mat_desc) VALUES ("${data[0]}", "${data[1]}")`, (error, result) => {
+      return connection.query(`INSERT INTO materials (mat_name, mat_desc, mat_info) VALUES ("${data[0]}", "${data[1]}", "${data[2]}")`, (error, result) => {
         if (error) {
           console.log(error, 'error inserting into materials table');
           reject(error)
@@ -105,7 +105,7 @@ const getProducts = () => {
 
 const getOneProdLoc = (id) => {
   return new Promise((resolve, reject) => {
-    return connection.query(`SELECT DISTINCT a.id, a.loc_name, a.loc_pic 
+    return connection.query(`SELECT DISTINCT a.id, a.loc_name, a.loc_pic, a.loc_name
       FROM locations a, locations_products b,  products c 
       WHERE b.prod_id = c.id 
       AND b.loc_id = a.id
@@ -114,7 +114,7 @@ const getOneProdLoc = (id) => {
           console.log(error);
           reject(error);
         } else {
-          console.log(result);
+          // console.log(result);
           resolve(result);
         }
       }); 
