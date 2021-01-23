@@ -64,7 +64,7 @@ let locProdUpdate = () => {
     }
     let locProdArr = [];
     for (var i = 0; i < 300; i ++) {
-      locProdArr.push([randomNum(10), randomNum(15)]);
+      locProdArr.push([randomNum(100), randomNum(15)]);
     }
     db.insertIntoLocProd(locProdArr)
 }
