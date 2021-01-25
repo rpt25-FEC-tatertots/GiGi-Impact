@@ -9,9 +9,9 @@ const SliderButton = styled.button`
   justify-content: center;
   border-radius: 50%;
   border: none;
-  background-color: #fff;
-  height: 6rem;
-  width: 6rem;
+  background-color: #e3ebe8;
+  height: 4rem;
+  width: 4rem;
   /* box-shadow: 0 6px 8px 0 rgba(0,0,0,.2); */
   &:hover{
     box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);

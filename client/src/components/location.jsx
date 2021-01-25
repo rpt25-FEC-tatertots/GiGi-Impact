@@ -1,4 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const LeftButton = styled.button`
+  display: flex;
+  border-radius: 10px;
+  border: none;
+`
+const RightButton = styled.button`
+  display: flex;
+  border-radius: 10px;
+  border: none;
+`
 
 class Location extends React.Component {
   constructor(props) {
@@ -12,8 +24,13 @@ class Location extends React.Component {
       const { loc_pic, loc_company, loc_name, id } = location;
       return (
         <div className='card' key={id}>
-          <img src={loc_pic}/>
+          <img src={loc_pic} />
           <div>{loc_name}</div>
+          <div>{loc_company}., Ltd</div>
+          <div>
+            <LeftButton>Learn More</LeftButton>
+            <RightButton>Factory</RightButton>
+          </div>
         </div>
       )
     })
