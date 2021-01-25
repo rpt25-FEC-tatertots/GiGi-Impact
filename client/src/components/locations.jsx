@@ -4,13 +4,17 @@ import Location from './location.jsx';
 import styled from 'styled-components';
 
 const SliderButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   border: none;
   background-color: #fff;
-  height: 4rem;
-  width: 4rem;
+  height: 6rem;
+  width: 6rem;
+  /* box-shadow: 0 6px 8px 0 rgba(0,0,0,.2); */
   &:hover{
-    box-shadow: 0 8px 20px 0 rgba(136, 18, 18, 0.2);
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   };
 `
 
@@ -67,17 +71,19 @@ class Locations extends React.Component {
     return (
       <div>
         <button>Where it is made</button>
-        <SliderButton onClick={this.slideLeft}>
-          <span className="material-icons">
-            keyboard_arrow_left
+        <div className='container'>
+          <SliderButton onClick={this.slideLeft}>
+            <span className="material-icons">
+              keyboard_arrow_left
           </span>
-        </SliderButton>
-        <Location locations={this.state.locations} />
-        <SliderButton onClick={this.slideRight}>
-          <span className="material-icons">
-            keyboard_arrow_right
-          </span>
-        </SliderButton>
+          </SliderButton>
+          <Location locations={this.state.locations} />
+          <SliderButton onClick={this.slideRight}>
+            <span className="material-icons">
+              keyboard_arrow_right
+              </span>
+          </SliderButton>
+        </div>
       </div>
     )
   }

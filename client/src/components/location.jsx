@@ -20,7 +20,7 @@ class Location extends React.Component {
     console.log(locations);
     return (
       locations.length > 0 && (
-        <div>
+        <div className='carousel'>
           {pics}
         </div>
       )
