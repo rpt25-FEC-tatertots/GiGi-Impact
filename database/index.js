@@ -105,7 +105,7 @@ const getProducts = () => {
 
 const getOneProdLoc = (id) => {
   return new Promise((resolve, reject) => {
-    return connection.query(`SELECT DISTINCT a.id, a.loc_name, a.loc_pic, a.loc_name
+    return connection.query(`SELECT DISTINCT a.id, a.loc_name, a.loc_pic, a.loc_company
       FROM locations a, locations_products b,  products c 
       WHERE b.prod_id = c.id 
       AND b.loc_id = a.id
@@ -114,7 +114,7 @@ const getOneProdLoc = (id) => {
           console.log(error);
           reject(error);
         } else {
-          // console.log(result);
+          // console.log('console.log from get1ProdLoc 😋', result);
           resolve(result);
         }
       }); 
@@ -131,3 +131,4 @@ module.exports = {
   getProducts,
   getOneProdLoc
 };
+

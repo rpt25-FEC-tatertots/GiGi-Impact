@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Location from './location.jsx';
 
 
 class Locations extends React.Component {
@@ -24,21 +25,10 @@ class Locations extends React.Component {
   }
 
   render() {
-    let display = this.state.locations.map(location => {
-      return <div key={location.id}>
-        <div className="card">
-          <div>
-            <h3>{location.loc_name}</h3>
-          </div>
-          <img src={location.loc_pic} alt="" />
-        </div>
-      </div>
-    })
     return (
       <div>
-        <h2>Where it is made</h2>
-        <br/>
-        {display}
+        <button>Where it is made</button>
+        <Location locations={this.state.locations}/>
       </div>
     )
   }
