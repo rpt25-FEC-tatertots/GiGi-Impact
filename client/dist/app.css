@@ -3,20 +3,41 @@
   flex-direction: row;
   width: 100%;
   height: 450px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 img {
   height: 50%;
   width: 100%;
+  border-radius: 5% 5% 0px 0px;
 }
 
 .card {
   height: 100%;
-  width: 275px;
-  margin: auto 10px;
+  max-width: 350px;
+  margin: auto 10px ;
   font-size: large;
-  border: 1px solid teal;
+  /* border: 1px solid teal; */
   box-sizing: border-box;
+  border-radius: 5%;
+  background-color: rgb(224, 222, 222);
+  transition: all 0.2s ease-in-out;
 }
 
+.card :hover {
+  transform: scale(1.1);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.two-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+}

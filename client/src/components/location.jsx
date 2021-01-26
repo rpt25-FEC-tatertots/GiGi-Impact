@@ -5,6 +5,7 @@ const LeftButton = styled.button`
   display: flex;
   border-radius: 10px;
   border: none;
+  background-color: transparent;
 `
 const RightButton = styled.button`
   display: flex;
@@ -27,7 +28,7 @@ class Location extends React.Component {
           <img src={loc_pic} />
           <div>{loc_name}</div>
           <div>{loc_company}., Ltd</div>
-          <div>
+          <div className='two-buttons'>
             <LeftButton>Learn More</LeftButton>
             <RightButton>Factory</RightButton>
           </div>
