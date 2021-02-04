@@ -23,13 +23,13 @@ const NavItems = Styled.ul`
 `
 const Marker = Styled.div`
   position: absolute;
-  height: 0px;
+  height: 4px;
   width: 100%;
   background: #000;
-  bottom: -8px;
+  bottom: 2px;
   transition: 0.5s;
   border-radius: 4px;
-  left: 0;
+  /* left: 4px; */
 `
 const Nav = Styled.div`
   padding: 0;
@@ -93,8 +93,8 @@ class Navbar extends React.Component {
           <Nav onClick={this.handlePick} onClick={this.getOffset} ref={this.myRef} id='locations' >
             Where it's made
           </Nav>
-        <Marker></Marker>
         </NavItems>
+        <Marker></Marker>
       </Box>
     </NavDiv>
   }
