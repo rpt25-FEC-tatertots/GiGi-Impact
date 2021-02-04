@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Materials from './components/materials.jsx';
 import Locations from './components/locations.jsx';
+import Header from './components/header.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -11,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello World!</h1>
+        <Header></Header>
         <Materials />
         <Locations />
       </div>
