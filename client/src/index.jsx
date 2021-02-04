@@ -7,7 +7,7 @@ import Styled from 'styled-components';
 import Navbar from './components/navbar.jsx';
 
 const Wrapper = Styled.div`
-  background-color: olive;
+  background-color: #fff;
   position: relative;
   padding-bottom: 5px;
   overflow: auto;
