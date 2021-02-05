@@ -6,7 +6,7 @@ class Materials extends React.Component {
   }
   render() {
     return (
-      <></>
+      <div>I am the materials component</div>
     )
   }
 }

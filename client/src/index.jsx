@@ -23,8 +23,6 @@ class App extends React.Component {
       <Wrapper>
         <Header></Header>
         <Navbar></Navbar>
-        <Materials />
-        <Locations />
       </Wrapper>
     )
   }
