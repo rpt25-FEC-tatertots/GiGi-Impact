@@ -4,9 +4,10 @@ import Materials from './components/materials.jsx';
 import Locations from './components/locations.jsx';
 import Header from './components/header.jsx';
 import Styled from 'styled-components';
+import Navbar from './components/navbar.jsx';
 
 const Wrapper = Styled.div`
-  background-color: olive;
+  background-color: #fff;
   position: relative;
   padding-bottom: 5px;
   overflow: auto;
@@ -21,6 +22,7 @@ class App extends React.Component {
     return (
       <Wrapper>
         <Header></Header>
+        <Navbar></Navbar>
         <Materials />
         <Locations />
       </Wrapper>

@@ -70,7 +70,6 @@ class Locations extends React.Component {
   render() {
     return (
       <div>
-        <button>Where it is made</button>
         <div className='container'>
           <SliderButton onClick={this.slideLeft}>
             <span className="material-icons">
