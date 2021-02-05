@@ -26,11 +26,9 @@ const Marker = Styled.div`
   height: 4px;
   width: 100%;
   background: #000;
-  /* bottom: 2px; */
   transition: 0.5s;
   border-radius: 4px;
   opacity: 0.2;
-  /* left: 4px; */
 `
 const MarkerSelected = Styled(Marker)`
   opacity: 1;
