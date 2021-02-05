@@ -3,20 +3,20 @@ import axios from 'axios';
 import Location from './location.jsx';
 import Styled from 'styled-components';
 
-const SliderTab = Styled.div`
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font-weight: 400;
-  vertical-align: baseline;
-  background: 0 0;
-  background-color: grey;
-`
 const SliderContainer = Styled.div`
+  display: block;
   position: relative;
   overflow-x: hidden;
+  /* padding: 2rem 0; */
+  margin-top: 0;
+  padding: 0;
+`
+const SliderCardContainer = Styled.div`
+  display: block;
+  margin: 0;
+  position: relative;
+  padding-left: 8rem;
+  padding-right: 8rem;
 `
 
 const SliderButton = Styled.button`
@@ -85,8 +85,8 @@ class Locations extends React.Component {
 
   render() {
     return (
-      <SliderTab>
-        <div className='container'>
+      <SliderContainer >
+        <SliderCardContainer>
           {/* <SliderButton onClick={this.slideLeft}>
             <span className="material-icons">
               keyboard_arrow_left
@@ -97,10 +97,9 @@ class Locations extends React.Component {
             <span className="material-icons">
               keyboard_arrow_right
               </span>
-          </SliderButton> */}
-        </div>  
-      </SliderTab>
-     
+          // </SliderButton> */}
+        </SliderCardContainer>
+      </SliderContainer >
     )
   }
 }

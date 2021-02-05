@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Materials from './components/materials.jsx';
-import Locations from './components/locations.jsx';
 import Header from './components/header.jsx';
 import Styled from 'styled-components';
 import Navbar from './components/navbar.jsx';
