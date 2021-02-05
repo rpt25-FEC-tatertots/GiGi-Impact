@@ -1,16 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import Styled from 'styled-components';
 
-const LeftButton = styled.button`
+const FactMill = Styled.button`
   display: flex;
   border-radius: 10px;
   border: none;
   background-color: transparent;
 `
-const RightButton = styled.button`
-  display: flex;
-  border-radius: 10px;
-  border: none;
+
+const LearnMore = Styled(FactMill)`
+  background-color: #fff;
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
 `
 
 class Location extends React.Component {
@@ -29,8 +32,8 @@ class Location extends React.Component {
           <div>{loc_name}</div>
           <div>{loc_company}., Ltd</div>
           <div className='two-buttons'>
-            <LeftButton>Learn More</LeftButton>
-            <RightButton>Factory</RightButton>
+            <FactMill>Factory</FactMill>
+            <LearnMore>Learn More</LearnMore>
           </div>
         </div>
       )

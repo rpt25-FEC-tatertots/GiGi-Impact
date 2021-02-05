@@ -26,7 +26,7 @@ const NavItems = Styled.ul`
 `
 const Marker = Styled.div`
   position: relative;
-  height: 4px;
+  height: 2px;
   width: 100%;
   background: #000;
   transition: 0.5s;
