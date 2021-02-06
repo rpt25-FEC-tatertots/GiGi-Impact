@@ -3,7 +3,6 @@ import Styled from 'styled-components';
 import Materials from './materials.jsx';
 import Locations from './locations.jsx';
 
-
 const NavDiv = Styled.div`
   position: relative;
   background: #fff;

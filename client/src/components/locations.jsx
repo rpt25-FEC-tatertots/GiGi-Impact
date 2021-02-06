@@ -7,11 +7,9 @@ const SliderContainer = Styled.div`
   display: block;
   position: relative;
   overflow-x: hidden;
-  /* padding: 2rem 0; */
   overflow: visible;
-  margin-top: 0;
+  margin-top: 10px;
   padding: 0;
-  /* background-color: purple; */
 `
 const SliderCardContainer = Styled.div`
   display: block;
@@ -20,7 +18,6 @@ const SliderCardContainer = Styled.div`
   padding-left: 8rem;
   padding-right: 8rem;
   overflow: visible;
-  /* background-color: aqua; */
 `
 
 const SliderButton = Styled.button`
@@ -53,8 +50,8 @@ class Locations extends React.Component {
   }
 
   getProductById() {
-    let randIndex = Math.floor(Math.random() * 100) + 1;
-    axios.get(`/api/locations?product_id=${randIndex}`)
+    let id = window.location.pathname;
+    axios.get(`/locations${id}`)
       .then(response => this.setState({ locations: response.data }))
       .catch(error => console.log(error))
   }
