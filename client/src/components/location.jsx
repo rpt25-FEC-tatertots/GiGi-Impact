@@ -80,36 +80,49 @@ class Location extends React.Component {
         </CardContainer>
       </Carousel>
     }
-    let pics = locations.length > 2 
-      ? locations.slice(0,2).map(location => {
-          const {id, loc_company, loc_name, loc_pic} = location;
-          return <CardContainer key={id}>
-              <Img src={loc_pic}></Img>
-              <Company>{loc_company.toUpperCase()+" Co., Ltd."}</Company>
-              <Country>{loc_name}</Country>
-              <CardInfo>
-                <SmallLeft>Factory</SmallLeft>
-                <SmallRight>Learn More</SmallRight>
-              </CardInfo>
-            </CardContainer>
-          })
-      : locations.map(location => {
-        const {id, loc_company, loc_name, loc_pic} = location;
-        return <CardContainer key={id}>
-            <Img src={loc_pic}></Img>
-            <Company>{loc_company.toUpperCase()+" Co., Ltd."}</Company>
-            <Country>{loc_name}</Country>
-            <CardInfo>
-              <SmallLeft>Factory</SmallLeft>
-              <SmallRight>Learn More</SmallRight>
-            </CardInfo>
-          </CardContainer>
-        })
+    // let pics = locations.length > 2 
+    //   ? locations.slice(0,2).map(location => {
+    //       const {id, loc_company, loc_name, loc_pic} = location;
+    //       return <CardContainer key={id}>
+    //           <Img src={loc_pic}></Img>
+    //           <Company>{loc_company.toUpperCase()+" Co., Ltd."}</Company>
+    //           <Country>{loc_name}</Country>
+    //           <CardInfo>
+    //             <SmallLeft>Factory</SmallLeft>
+    //             <SmallRight>Learn More</SmallRight>
+    //           </CardInfo>
+    //         </CardContainer>
+    //       })
+    //   : locations.map(location => {
+    //     const {id, loc_company, loc_name, loc_pic} = location;
+    //     return <CardContainer key={id}>
+    //         <Img src={loc_pic}></Img>
+    //         <Company>{loc_company.toUpperCase()+" Co., Ltd."}</Company>
+    //         <Country>{loc_name}</Country>
+    //         <CardInfo>
+    //           <SmallLeft>Factory</SmallLeft>
+    //           <SmallRight>Learn More</SmallRight>
+    //         </CardInfo>
+    //       </CardContainer>
+    //     })
+
+    let pics = locations.map(location => {
+      const {id, loc_company, loc_name, loc_pic} = location;
+      return <CardContainer key={id}>
+          <Img src={loc_pic}></Img>
+          <Company>{loc_company.toUpperCase()+" Co., Ltd."}</Company>
+          <Country>{loc_name}</Country>
+          <CardInfo>
+            <SmallLeft>Factory</SmallLeft>
+            <SmallRight>Learn More</SmallRight>
+          </CardInfo>
+        </CardContainer>
+      })
    
     return (
       locations.length > 0 && (
         <Carousel>
-          {pics}
+          {pics.slice(0,2)};
         </Carousel>
       )
     )

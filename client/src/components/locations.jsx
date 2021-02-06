@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import Location from './location.jsx';
-import Styled from 'styled-components';
 import { SliderContainer, SliderCardContainer } from './styledComponents.js';
 
 class Locations extends React.Component {
