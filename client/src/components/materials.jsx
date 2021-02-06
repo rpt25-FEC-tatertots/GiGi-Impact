@@ -1,5 +1,5 @@
 import React from 'react';
-import { SliderContainer, SliderCardContainer } from './styledComponents.js';
+import { Carousel, SliderContainer, SliderCardContainer } from './styledComponents.js';
 
 class Materials extends React.Component {
   constructor() {
@@ -40,17 +40,19 @@ class Materials extends React.Component {
     return (
       <SliderContainer >
         <SliderCardContainer>
-          {/* <SliderButton onClick={this.slideLeft}>
-            <span className="material-icons">
-              keyboard_arrow_left
-          </span>
-          </SliderButton> */}
-          Helloooo I am the materials
-          {/* <SliderButton onClick={this.slideRight}>
-            <span className="material-icons">
-              keyboard_arrow_right
-              </span>
-          // </SliderButton> */}
+          <Carousel>
+            {/* <SliderButton onClick={this.slideLeft}>
+              <span className="material-icons">
+                keyboard_arrow_left
+            </span>
+            </SliderButton> */}
+              <h2>Helloooo I am the materials</h2>
+            {/* <SliderButton onClick={this.slideRight}>
+              <span className="material-icons">
+                keyboard_arrow_right
+                </span>
+            // </SliderButton> */}
+          </Carousel>
         </SliderCardContainer>
       </SliderContainer >
     )
