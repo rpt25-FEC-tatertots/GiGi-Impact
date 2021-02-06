@@ -60,15 +60,14 @@ const Box = Styled.div`
 `
 
 class Navbar extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       currentTab: 'materials',
       isSelected: true
     }
 
-    this.myRef = React.createRef();
     this.handlePick = this.handlePick.bind(this);
   }
 
@@ -89,7 +88,7 @@ class Navbar extends React.Component {
       <NavDiv>
           <NavItems >
             <Box>
-              <Nav onClick={this.handlePick} ref={this.myRef} id='materials' >
+              <Nav onClick={this.handlePick} id='materials' >
                 How it's made
               </Nav>
               {currentTab === 'materials' && isSelected ? <MarkerSelected></MarkerSelected> : <Marker></Marker>}
@@ -102,7 +101,7 @@ class Navbar extends React.Component {
             </Box>
           </NavItems>
       </NavDiv>
-      {currentTab === 'materials' ? <Materials /> : <Locations/>}
+      {currentTab === 'materials' ? <Materials materials={ this.props. materials }/> : <Locations locations={ this.props.locations }/>}
     </div>
     }
 }
