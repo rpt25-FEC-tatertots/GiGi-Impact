@@ -37,6 +37,7 @@ class Materials extends React.Component {
   }
 
   render() {
+    console.log('materials props', this.props)
     return (
       <SliderContainer >
         <SliderCardContainer>
