@@ -14,7 +14,7 @@ const FactMill = Styled.button`
   transition: 0.3s;
   border-radius: 20px;
   border: none;
-  background-color: transparent;
+  background-color: #f0f4f5;
   font-family: 'Nunito Sans', sans-serif;
   margin: 15px;
   padding: 5px 20px;
@@ -24,9 +24,9 @@ const LearnMore = Styled(FactMill)`
   font-family: 'Nunito Sans', sans-serif;
 `
 const Company = Styled.div`
+  background-color: #f0f4f5;
   transition: 0.3s;
   grid-area: company; 
-  background-color: #f9f9f9;
   margin-left: 20px;
 `
 const Country = Styled(Company)`
@@ -34,7 +34,7 @@ const Country = Styled(Company)`
   opacity: 0;
 `
 const CardContainer = Styled.div`
-  background-color: #f9f9f9;
+  background-color: #f0f4f5;
   font-family: 'Nunito Sans', sans-serif;
   cursor: pointer;
   height: 100%;
@@ -64,6 +64,7 @@ const CardContainer = Styled.div`
   }
 `
 const CardInfo = Styled.div`
+  background-color: #f0f4f5;
   grid-area: footer;
   align-self: start;
   display: flex;
