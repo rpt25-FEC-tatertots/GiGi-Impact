@@ -2,51 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import Location from './location.jsx';
 import Styled from 'styled-components';
-
-const SliderContainer = Styled.div`
-  display: block;
-  position: relative;
-  overflow-x: hidden;
-  overflow: visible;
-  margin-top: 10px;
-  padding: 0;
-`
-const SliderCardContainer = Styled.div`
-  display: block;
-  margin: 0;
-  position: relative;
-  padding-left: 8rem;
-  padding-right: 8rem;
-  overflow: visible;
-`
-
-const SliderButton = Styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: none;
-  background-color: #e3ebe8;
-  height: 4rem;
-  width: 4rem;
-  /* box-shadow: 0 6px 8px 0 rgba(0,0,0,.2); */
-  &:hover{
-    box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
-  };
-`
+import { SliderContainer, SliderCardContainer } from './styledComponents.js';
 
 class Locations extends React.Component {
   constructor() {
     super();
     this.state = {
-      locations: [],
-      index: 0
+      locations: []
     }
-    this.slideRight = this.slideRight.bind(this);
-    this.slideLeft = this.slideLeft.bind(this);
-
     this.getProductById = this.getProductById.bind(this);
-
   }
 
   getProductById() {
@@ -60,45 +24,11 @@ class Locations extends React.Component {
     this.getProductById();
   }
 
-  slideRight(event) {
-    event.preventDefault();
-    this.setState(prevState => {
-      return {
-        index: ((prevState.index + 1) % this.state.locations.length)
-      }
-    })
-  }
-
-  slideLeft(event) {
-    event.preventDefault();
-    if (this.state.index === 0) {
-      this.setState({
-        index: this.state.locations.length - 1
-      })
-    } else {
-      this.setState(prevState => {
-        return {
-          index: prevState.index - 1
-        }
-      })
-    }
-  }
-
   render() {
     return (
       <SliderContainer >
         <SliderCardContainer>
-          {/* <SliderButton onClick={this.slideLeft}>
-            <span className="material-icons">
-              keyboard_arrow_left
-          </span>
-          </SliderButton> */}
           <Location locations={this.state.locations} />
-          {/* <SliderButton onClick={this.slideRight}>
-            <span className="material-icons">
-              keyboard_arrow_right
-              </span>
-          // </SliderButton> */}
         </SliderCardContainer>
       </SliderContainer >
     )

@@ -1,28 +1,7 @@
 import React from 'react';
 import Styled from 'styled-components';
+import { Carousel, SmallLeft, SmallRight } from './styledComponents.js';
 
-const Carousel = Styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  /* overflow: visible; */
-  height: 500px;
-`
-const FactMill = Styled.button`
-  transition: 0.3s;
-  border-radius: 20px;
-  border: none;
-  background-color: #f0f4f5;
-  font-family: 'Nunito Sans', sans-serif;
-  margin: 15px;
-  padding: 5px 20px;
-`
-const LearnMore = Styled(FactMill)`
-  background-color: #fff;
-  font-family: 'Nunito Sans', sans-serif;
-`
 const Company = Styled.div`
   background-color: #f0f4f5;
   transition: 0.3s;
@@ -55,7 +34,7 @@ const CardContainer = Styled.div`
     transform: scale(1.015);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
-  &&:hover ${LearnMore} {
+  &&:hover ${SmallRight} {
     background-color: #000;
     color: #fff;
   }
@@ -95,8 +74,8 @@ class Location extends React.Component {
           <Company>Tater Tots Co., Ltd.</Company>
           <Country>Hack Reactor</Country>
           <CardInfo>
-            <FactMill>Factory</FactMill>
-            <LearnMore>Learn More</LearnMore>
+            <SmallLeft>Factory</SmallLeft>
+            <SmallRight>Learn More</SmallRight>
           </CardInfo>
         </CardContainer>
       </Carousel>
@@ -109,8 +88,8 @@ class Location extends React.Component {
               <Company>{loc_company.toUpperCase()+" Co., Ltd."}</Company>
               <Country>{loc_name}</Country>
               <CardInfo>
-                <FactMill>Factory</FactMill>
-                <LearnMore>Learn More</LearnMore>
+                <SmallLeft>Factory</SmallLeft>
+                <SmallRight>Learn More</SmallRight>
               </CardInfo>
             </CardContainer>
           })
@@ -121,8 +100,8 @@ class Location extends React.Component {
             <Company>{loc_company.toUpperCase()+" Co., Ltd."}</Company>
             <Country>{loc_name}</Country>
             <CardInfo>
-              <FactMill>Factory</FactMill>
-              <LearnMore>Learn More</LearnMore>
+              <SmallLeft>Factory</SmallLeft>
+              <SmallRight>Learn More</SmallRight>
             </CardInfo>
           </CardContainer>
         })
