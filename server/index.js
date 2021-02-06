@@ -2,13 +2,14 @@ const express = require('express');
 const db = require('../database/index.js');
 
 let app = express();
-
+app.use('/:productID', express.static(__dirname + '/../client/dist'));
 app.use(express.static(__dirname + '/../client/dist'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/api/locations', (req, res) => {
-  let productID = req.query.product_id;
+app.get('/locations/:productID', (req, res) => {
+  let productID = req.params.productID;
   console.log('😛', productID)
   if(productID > 100) {
     res.sendStatus(404)

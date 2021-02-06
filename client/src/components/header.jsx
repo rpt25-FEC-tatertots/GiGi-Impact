@@ -3,7 +3,6 @@ import Styled from 'styled-components';
 
 const HeaderInfo = Styled.div`
   position: relative;
-  background-color: green;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;

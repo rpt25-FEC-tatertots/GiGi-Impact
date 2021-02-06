@@ -1,5 +1,7 @@
 import React from 'react';
 import Styled from 'styled-components';
+import Materials from './materials.jsx';
+import Locations from './locations.jsx';
 
 const NavDiv = Styled.div`
   position: relative;
@@ -23,14 +25,12 @@ const NavItems = Styled.ul`
 `
 const Marker = Styled.div`
   position: relative;
-  height: 4px;
+  height: 2px;
   width: 100%;
   background: #000;
-  /* bottom: 2px; */
   transition: 0.5s;
   border-radius: 4px;
   opacity: 0.2;
-  /* left: 4px; */
 `
 const MarkerSelected = Styled(Marker)`
   opacity: 1;
@@ -85,23 +85,26 @@ class Navbar extends React.Component {
 
   render() {
     const {currentTab, isSelected} = this.state
-    return <NavDiv>
-        <NavItems >
-          <Box>
-            <Nav onClick={this.handlePick} ref={this.myRef} id='materials' >
-              How it's made
-            </Nav>
-            {currentTab === 'materials' && isSelected ? <MarkerSelected></MarkerSelected> : <Marker></Marker>}
-          </Box>
-          <Box>
-            <Nav onClick={this.handlePick} ref={this.myRef} id='locations' >
-              Where it's made
-            </Nav>
-            {currentTab === 'locations' && isSelected ? <MarkerSelected></MarkerSelected> : <Marker></Marker>}
-          </Box>
-        </NavItems>
-    </NavDiv>
-  }
+    return <div>
+      <NavDiv>
+          <NavItems >
+            <Box>
+              <Nav onClick={this.handlePick} ref={this.myRef} id='materials' >
+                How it's made
+              </Nav>
+              {currentTab === 'materials' && isSelected ? <MarkerSelected></MarkerSelected> : <Marker></Marker>}
+            </Box>
+            <Box>
+              <Nav onClick={this.handlePick} ref={this.myRef} id='locations' >
+                Where it's made
+              </Nav>
+              {currentTab === 'locations' && isSelected ? <MarkerSelected></MarkerSelected> : <Marker></Marker>}
+            </Box>
+          </NavItems>
+      </NavDiv>
+      {currentTab === 'materials' ? <Materials /> : <Locations/>}
+    </div>
+    }
 }
 
 export default Navbar;
