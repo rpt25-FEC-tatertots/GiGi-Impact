@@ -8,8 +8,10 @@ const SliderContainer = Styled.div`
   position: relative;
   overflow-x: hidden;
   /* padding: 2rem 0; */
+  overflow: visible;
   margin-top: 0;
   padding: 0;
+  /* background-color: purple; */
 `
 const SliderCardContainer = Styled.div`
   display: block;
@@ -17,6 +19,8 @@ const SliderCardContainer = Styled.div`
   position: relative;
   padding-left: 8rem;
   padding-right: 8rem;
+  overflow: visible;
+  /* background-color: aqua; */
 `
 
 const SliderButton = Styled.button`
