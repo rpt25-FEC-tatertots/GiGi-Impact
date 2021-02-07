@@ -29,7 +29,7 @@ class App extends React.Component {
       .then(response => this.setState({ locations: response.data }))
       .catch(error => console.log(error))
     axios.get(`/materials${id}`)
-      .then(response => this.setState({ locations: response.data }))
+      .then(response => this.setState({ materials: response.data }))
       .catch(error => console.log(error))
   }
 

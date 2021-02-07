@@ -16,7 +16,7 @@ const CardContainer = Styled.div`
   background-color: #f0f4f5;
   font-family: 'Nunito Sans', sans-serif;
   cursor: pointer;
-  height: 100%;
+  /* height: 100%; */
   display: grid;
   grid-template-columns: 0.2fr 1.5fr 1.5fr 0.7fr;
   grid-template-rows: 0.3fr 0.3fr 1.7fr 1.7fr;
@@ -27,7 +27,9 @@ const CardContainer = Styled.div`
     "country country country country"
     "footer footer footer footer";
   transition: 0.3s;
-  width: 350px;
+  /* width: 350px; */
+  width: 320px;
+  height: 450px;
   border-radius: 5%; 
   margin: 10px;
   &:hover {
@@ -70,7 +72,7 @@ class Location extends React.Component {
     if(!locations.length) {
       return <Carousel>
         <CardContainer key='no'>
-          <Img src="https://pixabay.com/get/ge9ac0a1608e17c9cdcec58ce2b3d814b6d579bdca6d849b5fe516e52d21a367338f7db585786311f105f9e6de559fb9c_640.jpg"></Img>
+          <Img src="https://images.all-free-download.com/images/graphicthumb/cute_puppy_photo_picture_11_168839.jpg"></Img>
           <Company>Tater Tots Co., Ltd.</Company>
           <Country>Hack Reactor</Country>
           <CardInfo>
@@ -97,7 +99,7 @@ class Location extends React.Component {
     return (
       locations.length > 0 && (
         <Carousel>
-          {pics.slice(0,2)};
+          {pics.slice(0,2)}
         </Carousel>
       )
     )
