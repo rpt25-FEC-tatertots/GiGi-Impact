@@ -20,11 +20,10 @@ app.get('/locations/:productID', (req, res) => {
 
 app.get('/materials/:productID', (req, res) => {
   let productID = req.params.productID;
-  console.log('😛 on the materials', productID)
   if(productID > 100) {
     res.sendStatus(404)
   }
-  db.getOneProdLoc(productID)
+  db.getOneProdMat(productID)
     .then(data => res.json(data))
     .catch(error => res.sendStatus(404))
 })

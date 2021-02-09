@@ -20,17 +20,24 @@ class App extends React.Component {
       locations: [],
       materials: []
     }
-    this.getProductById = this.getProductById.bind(this);
+    this.getProductById();
   }
   
   getProductById() {
     let id = window.location.pathname;
-    axios.get(`/locations${id}`)
-      .then(response => this.setState({ locations: response.data }))
-      .catch(error => console.log(error))
-    axios.get(`/materials${id}`)
-      .then(response => this.setState({ locations: response.data }))
-      .catch(error => console.log(error))
+    Promise.all([
+      axios.get(`/locations${id}`),
+      axios.get(`/materials${id}`)
+    ])
+      .then(responses => {
+        let locations = responses[0].data;
+        let materials = responses[1].data;
+        this.setState({
+          locations: locations,
+          materials: materials
+        })
+      })
+      .catch(error => console.log('error in index.js for Promise all', error))
   }
 
   componentDidMount() {

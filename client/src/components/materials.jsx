@@ -1,5 +1,6 @@
 import React from 'react';
-import { Carousel, SliderContainer, SliderCardContainer } from './styledComponents.js';
+import { Carousel, SliderContainer, SliderCardContainer, SliderButton } from './styledComponents.js';
+import Material from './material.jsx';
 
 class Materials extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Materials extends React.Component {
     event.preventDefault();
     this.setState(prevState => {
       return {
-        index: ((prevState.index + 1) % this.state.locations.length)
+        index: ((prevState.index + 1) % this.props.materials.length)
       }
     })
   }
@@ -25,7 +26,7 @@ class Materials extends React.Component {
     event.preventDefault();
     if (this.state.index === 0) {
       this.setState({
-        index: this.state.locations.length - 1
+        index: this.state.materials.length - 1
       })
     } else {
       this.setState(prevState => {
@@ -37,7 +38,6 @@ class Materials extends React.Component {
   }
 
   render() {
-    console.log('materials props', this.props)
     return (
       <SliderContainer >
         <SliderCardContainer>
@@ -45,14 +45,14 @@ class Materials extends React.Component {
             {/* <SliderButton onClick={this.slideLeft}>
               <span className="material-icons">
                 keyboard_arrow_left
-            </span>
+              </span>
             </SliderButton> */}
-              <h2>Helloooo I am the materials</h2>
+              <Material materials={this.props.materials}/>
             {/* <SliderButton onClick={this.slideRight}>
               <span className="material-icons">
                 keyboard_arrow_right
-                </span>
-            // </SliderButton> */}
+              </span>
+            </SliderButton> */}
           </Carousel>
         </SliderCardContainer>
       </SliderContainer >
@@ -61,3 +61,4 @@ class Materials extends React.Component {
 }
 
 export default Materials;
+
