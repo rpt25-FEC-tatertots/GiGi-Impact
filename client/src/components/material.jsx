@@ -6,6 +6,7 @@ const Blob = Styled.div`
   margin: 0;
   padding: 0;
   grid-area: blob;
+  grid-column-start: 2;
   width: 170px;
   height: 150px;
   background: url("https://www.patagonia.com/dw/image/v2/bdjb_PRD/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw6fbb2428/fpc/programs/brewer_c_0001_cc_WEB-1200x1200.jpg?q=60&amp;sw=600&amp");
@@ -56,10 +57,13 @@ const LearnMore = Styled(SmallRight)`
 const MatInfo = Styled.div`
   font-family: 'Nunito Sans', sans-serif;
   font-size: 0.82rem;
+  font-weight: 400;
   color: #fff;
   transition: .5s ease;
   opacity: 0;
   text-align: center;
+  grid-area: blob;
+  margin-top: 0 5px 20px 5px;
 `
 
 const Card = Styled.div`
@@ -69,7 +73,7 @@ const Card = Styled.div`
   gap: 0px 0px;
   overflow: hidden;
   grid-template-areas:
-    ". blob"
+    "blob blob"
     "MatName MatName"
     "MatDesc MatDesc"
     "LeftButton RightButton";
@@ -87,15 +91,16 @@ const Card = Styled.div`
   }
   &&:hover ${MatInfo} {
     opacity: 1;
-    z-index: 10;
+    z-index: 15;
   }
-
   &&:hover {
-    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
     background: url("https://www.patagonia.com/dw/image/v2/bdjb_PRD/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw6fbb2428/fpc/programs/brewer_c_0001_cc_WEB-1200x1200.jpg?q=60&amp;sw=600&amp");
     z-index: 10;
-    opacity: .8;
+    opacity: 0.8;
     ${MatDesc} {
       opacity: 0;
     };
@@ -122,10 +127,8 @@ class Material extends React.Component {
     this.handleHover = this.handleHover.bind(this);
   }
 
-
   handleHover(event) {
     event.preventDefault();
-    console.log(event.target.id)
     this.setState(prevState => {
       return {
         isHovered: !prevState.isHovered
@@ -135,6 +138,7 @@ class Material extends React.Component {
 
   render() {
     const materials = this.props.materials;
+    const { isHovered } = this.state;
     let matDisplay = materials.map(material => {
       const { id, mat_desc, mat_info, mat_name } = material;
       return <Card key={id} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
