@@ -2,8 +2,8 @@ import React from 'react';
 import { Carousel, SliderContainer, SliderCardContainer } from './styledComponents.js';
 
 class Materials extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       index: 0
     }
@@ -37,6 +37,7 @@ class Materials extends React.Component {
   }
 
   render() {
+    console.log('materials props', this.props)
     return (
       <SliderContainer >
         <SliderCardContainer>
