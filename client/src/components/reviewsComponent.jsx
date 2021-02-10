@@ -7,6 +7,7 @@ const ReviewsContainer = Styled.div`
   color: white;
   font-family: Nunito Sans;
   padding: 8rem 0rem;
+  margin-bottom: 4rem;
 `;
 
 const AllContentContainer = Styled.div`
@@ -102,9 +103,9 @@ class ReviewsComponent extends React.Component {
                 <SubTextStyle>Popular among reviewers</SubTextStyle>
               </ReviewType>
             </ReviewSection>
-            <ReviewSection style={{"margin-top": "25px", "align-items":"center"}}>
+            <ReviewSection style={{"marginTop": "25px", "alignItems":"center"}}>
               <StyledReviewsButton>See All Reviews</StyledReviewsButton>
-              <BottomTextStyle style={{"padding-left": "2rem"}}>Write a Review</BottomTextStyle>
+              <BottomTextStyle style={{"paddingLeft": "2rem"}}>Write a Review</BottomTextStyle>
             </ReviewSection>
           </ReviewAspactsContainter>
         </AllContentContainer>
