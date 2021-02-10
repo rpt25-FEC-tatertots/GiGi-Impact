@@ -9,7 +9,6 @@ const Blob = Styled.div`
   grid-column-start: 2;
   width: 170px;
   height: 150px;
-  /* background: url("https://www.patagonia.com/dw/image/v2/bdjb_PRD/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw6fbb2428/fpc/programs/brewer_c_0001_cc_WEB-1200x1200.jpg?q=60&amp;sw=600&amp"); */
   background: url(${props => props.url});
   background-size: cover;
   animation: animate 20s linear infinite;
@@ -33,7 +32,7 @@ const MatName = Styled.p`
   grid-area: MatName;
   font-size: 1.5rem;
   font-weight: bold; 
-  margin-left: 5%;
+  margin: 5%;
 `
 const MatDesc = Styled(MatName)`
   font-family: 'Nunito Sans', sans-serif;
@@ -99,7 +98,7 @@ const Card = Styled.div`
     align-items: center;
     margin-left: 10px;
     margin-right: 10px;
-    background: url("https://www.patagonia.com/dw/image/v2/bdjb_PRD/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw6fbb2428/fpc/programs/brewer_c_0001_cc_WEB-1200x1200.jpg?q=60&amp;sw=600&amp");
+    background: url(${props => props.url});
     z-index: 10;
     opacity: 0.8;
     ${MatDesc} {
@@ -139,12 +138,25 @@ class Material extends React.Component {
 
   render() {
     const materials = this.props.materials;
+    if(!materials.length) {
+      return <Carousel>
+          <Card key='none' onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} style={{backgroundColor: "#f5d90a"}}>
+          {this.state.isHovered ? <MatInfo style={{color: "black", fontSize: "2rem"}}>Let’s quack this case 🐣.</MatInfo> : null }
+          <Blob url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2EGNOn0R__P2Bv_oIzb2EIRAQCAYKO7xQaw&usqp=CAU"></Blob>
+          <MatName>100% vegan, range free rubber duck</MatName>
+          <MatDesc>What did the duck detective say to his partner?</MatDesc>
+          <Program>Program</Program>
+          <LearnMore>Learn More</LearnMore>
+        </Card>
+      </Carousel>
+    }
+
     const { isHovered } = this.state;
     let matDisplay = materials.map(material => {
-      const { id, mat_desc, mat_info, mat_name } = material;
-      return <Card key={id} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+      const { id, mat_desc, mat_info, mat_name, mat_img } = material;
+      return <Card key={id} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} url={mat_img}>
         {this.state.isHovered ? <MatInfo>{mat_info.slice(0, 250)}</MatInfo> : null }
-        <Blob url={"https://www.patagonia.com/dw/image/v2/bdjb_PRD/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw6fbb2428/fpc/programs/brewer_c_0001_cc_WEB-1200x1200.jpg?q=60&amp;sw=600&amp"}></Blob>
+        <Blob url={mat_img}></Blob>
         <MatName>{mat_name}</MatName>
         <MatDesc>{mat_desc}</MatDesc>
         <Program>Program</Program>

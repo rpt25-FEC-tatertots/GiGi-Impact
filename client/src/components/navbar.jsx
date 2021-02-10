@@ -74,7 +74,6 @@ class Navbar extends React.Component {
 
   handlePick(event) {
     event.preventDefault();
-    console.log(event.target.id)
     this.setState(
       { currentTab: event.target.id,
         isSelected: true
