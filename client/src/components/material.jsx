@@ -138,10 +138,12 @@ class Material extends React.Component {
 
   render() {
     const materials = this.props.materials;
+    const { isHovered } = this.state;
+    const { handleHover } = this;
     if(!materials.length) {
       return <Carousel>
-          <Card key='none' onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} style={{backgroundColor: "#f5d90a"}}>
-          {this.state.isHovered ? <MatInfo style={{color: "black", fontSize: "2rem"}}>Let’s quack this case 🐣.</MatInfo> : null }
+          <Card key='none' onMouseEnter={handleHover} onMouseLeave={handleHover} style={{backgroundColor: "#f5d90a"}}>
+          {isHovered ? <MatInfo style={{color: "black", fontSize: "2rem"}}>Let’s quack this case 🐣.</MatInfo> : null }
           <Blob url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2EGNOn0R__P2Bv_oIzb2EIRAQCAYKO7xQaw&usqp=CAU"></Blob>
           <MatName>100% vegan, range free rubber duck</MatName>
           <MatDesc>What did the duck detective say to his partner?</MatDesc>
@@ -151,11 +153,10 @@ class Material extends React.Component {
       </Carousel>
     }
 
-    const { isHovered } = this.state;
     let matDisplay = materials.map(material => {
       const { id, mat_desc, mat_info, mat_name, mat_img } = material;
-      return <Card key={id} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} url={mat_img}>
-        {this.state.isHovered ? <MatInfo>{mat_info.slice(0, 250)}</MatInfo> : null }
+      return <Card key={id} onMouseEnter={handleHover} onMouseLeave={handleHover} url={mat_img}>
+        {isHovered ? <MatInfo>{mat_info.slice(0, 250)}</MatInfo> : null }
         <Blob url={mat_img}></Blob>
         <MatName>{mat_name}</MatName>
         <MatDesc>{mat_desc}</MatDesc>
