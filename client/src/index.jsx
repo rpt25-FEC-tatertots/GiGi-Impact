@@ -40,10 +40,6 @@ class App extends React.Component {
       .catch(error => console.log('error in index.js for Promise all', error))
   }
 
-  componentDidMount() {
-    this.getProductById();
-  }
-
   render() {
     const { locations, materials } = this.state
     return (

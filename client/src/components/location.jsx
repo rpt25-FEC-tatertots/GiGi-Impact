@@ -1,12 +1,12 @@
 import React from 'react';
 import Styled from 'styled-components';
-import { Carousel, SmallLeft, SmallRight } from './styledComponents.js';
+import { Carousel, SmallLeft, SmallRight, CardInfo } from './styledComponents.js';
 
 const Company = Styled.div`
   background-color: #f0f4f5;
   transition: 0.3s;
   grid-area: company; 
-  margin-left: 20px;
+  margin: 20px 20px 0 20px;
 `
 const Country = Styled(Company)`
   grid-area: country;
@@ -16,6 +16,7 @@ const CardContainer = Styled.div`
   background-color: #f0f4f5;
   font-family: 'Nunito Sans', sans-serif;
   cursor: pointer;
+  flex-shrink: 0;
   /* height: 100%; */
   display: grid;
   grid-template-columns: 0.2fr 1.5fr 1.5fr 0.7fr;
@@ -44,20 +45,9 @@ const CardContainer = Styled.div`
     opacity: 1;
   }
 `
-const CardInfo = Styled.div`
-  background-color: #f0f4f5;
-  grid-area: footer;
-  align-self: start;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: none;
-  transition: all 0.2s ease-in-out; 
-  border-radius: 0 0 5% 5%;
-`
 const Img = Styled.img`
   grid-area: img;
-  height: 85%; 
+  height: 100%; 
   width: 100%; 
   border-radius: 5% 5% 0px 0px;
 `

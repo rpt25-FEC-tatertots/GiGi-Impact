@@ -53,6 +53,17 @@ const SmallRight = Styled(SmallLeft)`
   background-color: #fff;
   font-family: 'Nunito Sans', sans-serif;
 `
+const CardInfo = Styled.div`
+  background-color: #f0f4f5;
+  grid-area: footer;
+  align-self: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: none;
+  transition: all 0.2s ease-in-out; 
+  border-radius: 0 0 5% 5%;
+`
 
 export {
   Carousel,
@@ -60,5 +71,6 @@ export {
   SliderCardContainer,
   SliderButton,
   SmallLeft,
-  SmallRight
+  SmallRight,
+  CardInfo
 }
