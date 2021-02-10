@@ -123,7 +123,7 @@ const getOneProdLoc = (id) => {
 
 const getOneProdMat = (id) => {
   return new Promise((resolve, reject) => {
-    return connection.query(`SELECT DISTINCT a.id, a.mat_name, a.mat_desc, a.mat_info
+    return connection.query(`SELECT DISTINCT a.id, a.mat_name, a.mat_desc, a.mat_info, a.mat_img
       FROM materials a, materials_products b,  products c 
       WHERE b.prod_id = c.id 
       AND b.mat_id = a.id

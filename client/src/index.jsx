@@ -41,7 +41,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { locations, materials } = this.state
+    const { locations, materials } = this.state;
     return (
       <Wrapper>
         <Header></Header>
