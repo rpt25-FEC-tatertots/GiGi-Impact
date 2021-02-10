@@ -3,7 +3,8 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Hello123',
+  // password: 'Hello123',
+  password: '',
   database: 'sourcing'
 });
 
@@ -106,8 +107,8 @@ const getProducts = () => {
 const getOneProdLoc = (id) => {
   return new Promise((resolve, reject) => {
     return connection.query(`SELECT DISTINCT a.id, a.loc_name, a.loc_pic, a.loc_company
-      FROM locations a, locations_products b,  products c 
-      WHERE b.prod_id = c.id 
+      FROM locations a, locations_products b,  products c
+      WHERE b.prod_id = c.id
       AND b.loc_id = a.id
       AND c.id = ${id}`, (error, result) => {
         if(error) {
@@ -117,15 +118,15 @@ const getOneProdLoc = (id) => {
           // console.log('console.log from get1ProdLoc 😋', result);
           resolve(result);
         }
-      }); 
+      });
   })
 }
 
 const getOneProdMat = (id) => {
   return new Promise((resolve, reject) => {
     return connection.query(`SELECT DISTINCT a.id, a.mat_name, a.mat_desc, a.mat_info, a.mat_img
-      FROM materials a, materials_products b,  products c 
-      WHERE b.prod_id = c.id 
+      FROM materials a, materials_products b,  products c
+      WHERE b.prod_id = c.id
       AND b.mat_id = a.id
       AND c.id = ${id}`, (error, result) => {
         if(error) {
@@ -135,7 +136,7 @@ const getOneProdMat = (id) => {
           // console.log('console.log from get1ProdMat 😋', result);
           resolve(result);
         }
-      }); 
+      });
   })
 }
 
