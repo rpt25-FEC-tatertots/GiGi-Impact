@@ -4,7 +4,7 @@ import Header from './components/header.jsx';
 import Styled from 'styled-components';
 import Navbar from './components/navbar.jsx';
 import axios from 'axios';
-import ReviewsComponent from './ReviewsComponent.jsx';
+import ReviewsComponent from './components/reviewsComponent.jsx';
 
 const Wrapper = Styled.div`
   background-color: #fff;
