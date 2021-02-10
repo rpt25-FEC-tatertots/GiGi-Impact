@@ -60,9 +60,6 @@ CREATE TABLE materials_products (
   prod_id INTEGER NOT NULL,
   mat_id INTEGER NOT NULL,
   PRIMARY KEY (id)
-  -- ,
-  -- FOREIGN KEY (prod_id) REFERENCES products(id),
-  -- FOREIGN KEY (mat_id) REFERENCES materials(id)
 );
 
 
@@ -78,9 +75,6 @@ CREATE TABLE locations_products (
   prod_id INTEGER NOT NULL,
   loc_id INTEGER NOT NULL,
   PRIMARY KEY (id)
-  -- ,
-  -- FOREIGN KEY (prod_id) REFERENCES products(id),
-  -- FOREIGN KEY (loc_id) REFERENCES locations(id)
 );
 
 /*  Execute this file from the command line by typing:
