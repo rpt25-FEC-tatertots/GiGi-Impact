@@ -9,7 +9,8 @@ const Blob = Styled.div`
   grid-column-start: 2;
   width: 170px;
   height: 150px;
-  background: url("https://www.patagonia.com/dw/image/v2/bdjb_PRD/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw6fbb2428/fpc/programs/brewer_c_0001_cc_WEB-1200x1200.jpg?q=60&amp;sw=600&amp");
+  /* background: url("https://www.patagonia.com/dw/image/v2/bdjb_PRD/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw6fbb2428/fpc/programs/brewer_c_0001_cc_WEB-1200x1200.jpg?q=60&amp;sw=600&amp"); */
+  background: url(${props => props.url});
   background-size: cover;
   animation: animate 20s linear infinite;
   @keyframes animate {
@@ -143,7 +144,7 @@ class Material extends React.Component {
       const { id, mat_desc, mat_info, mat_name } = material;
       return <Card key={id} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
         {this.state.isHovered ? <MatInfo>{mat_info.slice(0, 250)}</MatInfo> : null }
-        <Blob></Blob>
+        <Blob url={"https://www.patagonia.com/dw/image/v2/bdjb_PRD/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw6fbb2428/fpc/programs/brewer_c_0001_cc_WEB-1200x1200.jpg?q=60&amp;sw=600&amp"}></Blob>
         <MatName>{mat_name}</MatName>
         <MatDesc>{mat_desc}</MatDesc>
         <Program>Program</Program>

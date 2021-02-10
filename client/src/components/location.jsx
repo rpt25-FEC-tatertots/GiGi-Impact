@@ -6,7 +6,7 @@ const Company = Styled.div`
   background-color: #f0f4f5;
   transition: 0.3s;
   grid-area: company; 
-  margin-left: 20px;
+  margin: 20px 20px 0 20px;
 `
 const Country = Styled(Company)`
   grid-area: country;
@@ -47,7 +47,7 @@ const CardContainer = Styled.div`
 `
 const Img = Styled.img`
   grid-area: img;
-  height: 85%; 
+  height: 100%; 
   width: 100%; 
   border-radius: 5% 5% 0px 0px;
 `
