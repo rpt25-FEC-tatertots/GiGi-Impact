@@ -67,10 +67,8 @@ class Navbar extends React.Component {
       currentTab: 'materials',
       isSelected: true
     }
-
     this.handlePick = this.handlePick.bind(this);
   }
-
 
   handlePick(event) {
     event.preventDefault();
