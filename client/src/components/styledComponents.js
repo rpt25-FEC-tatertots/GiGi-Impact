@@ -1,43 +1,47 @@
 import Styled from 'styled-components';
 
 const SliderContainer = Styled.div`
-  display: block;
+  display: flex;
   position: relative;
-  overflow-x: hidden;
   overflow: visible;
   margin-top: 10px;
   padding: 0;
+  justify-content: center;
 `
 const SliderCardContainer = Styled.div`
-  display: block;
+  display: flex;
   margin: 0;
   position: relative;
-  padding-left: 8rem;
-  padding-right: 8rem;
-  overflow: visible;
+  overflow-x: hidden;
+  align-items: center;
 `
 const Carousel = Styled.div`
-  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: row;
-  /* overflow: visible; */
+  overflow: visible;
   height: 500px;
+  overflow-x: hidden;
+  box-sizing: content-box;
+  margin-left: 18px;
+  margin-right: 18px;
 `
 const SliderButton = Styled.button`
-  display: flex;
+  position: absolute;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   border: none;
-  background-color: #e3ebe8;
-  height: 4rem;
-  width: 4rem;
-  /* box-shadow: 0 6px 8px 0 rgba(0,0,0,.2); */
-  &:hover{
+  height: 3.5rem;
+  width: 3.5rem;
+  font-size: 400;
+  background-color: #fff;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  :hover{
     box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+    transform: scale(1.02);
   };
+  z-index: 100;
 `
 
 const SmallLeft = Styled.button`

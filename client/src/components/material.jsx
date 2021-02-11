@@ -7,8 +7,8 @@ const Blob = Styled.div`
   padding: 0;
   grid-area: blob;
   grid-column-start: 2;
-  width: 170px;
-  height: 150px;
+  width: 180px;
+  height: 160px;
   background: url(${props => props.url});
   background-size: cover;
   animation: animate 20s linear infinite;
@@ -40,12 +40,12 @@ const MatDesc = Styled(MatName)`
   font-size: .75rem;
   font-weight: normal;
 `
-
 const Program = Styled(SmallLeft)`
   grid-area: LeftButton;
   grid-column-start: 1;
   margin: 0px 25px 45px 25px;
   padding: 5px 20px;
+  background-color: transparent;
 `
 const LearnMore = Styled(SmallRight)`
   grid-area = RightButton;
@@ -65,7 +65,6 @@ const MatInfo = Styled.div`
   grid-area: blob;
   margin-top: 0 5px 20px 5px;
 `
-
 const Card = Styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -82,18 +81,19 @@ const Card = Styled.div`
   cursor: pointer;
   border-radius: 5%;
   margin: 10px;
-  width: 320px;
-  height: 450px;
-  &&:hover ${LearnMore} {
+  height: 480px;
+  max-width: 360px;
+  flex: 1 0 22%;
+  :hover ${LearnMore} {
     background-color: #000;
     color: #fff;
     z-index: 10;
   }
-  &&:hover ${MatInfo} {
+  :hover ${MatInfo} {
     opacity: 1;
     z-index: 15;
   }
-  &&:hover {
+  :hover {
     grid-template-rows: 1fr;
     align-items: center;
     margin-left: 10px;

@@ -45,10 +45,10 @@ class App extends React.Component {
     const { locations, materials } = this.state;
     return (
       <>
-        <ReviewsComponent/>
+        <ReviewsComponent />
         <Wrapper>
           <Header></Header>
-          <Navbar locations={ locations } materials={ materials }></Navbar>
+          <Navbar locations={locations} materials={materials}></Navbar>
         </Wrapper>
       </>
     )

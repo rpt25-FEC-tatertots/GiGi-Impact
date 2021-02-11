@@ -38,22 +38,29 @@ class Materials extends React.Component {
   }
 
   render() {
+    const { materials } = this.props;
+    const { index } = this.state;
+    
     return (
       <SliderContainer >
         <SliderCardContainer>
-          <Carousel>
-            {/* <SliderButton onClick={this.slideLeft}>
+          {materials.length > 4 && index ? 
+            <SliderButton onClick={this.slideLeft} style={{left: "10px"}}>
               <span className="material-icons">
                 keyboard_arrow_left
               </span>
-            </SliderButton> */}
-              <Material materials={this.props.materials}/>
-            {/* <SliderButton onClick={this.slideRight}>
+            </SliderButton>
+          : null}
+          <Carousel>
+              <Material materials={materials.slice(index, index + 5)}/>
+          </Carousel>
+          {materials.length > 4 && (materials.slice(index, index + 5).length > 4) ?
+            <SliderButton onClick={this.slideRight} style={{right: "10px"}}>
               <span className="material-icons">
                 keyboard_arrow_right
               </span>
-            </SliderButton> */}
-          </Carousel>
+            </SliderButton>
+          : null}
         </SliderCardContainer>
       </SliderContainer >
     )

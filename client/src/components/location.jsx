@@ -17,7 +17,6 @@ const CardContainer = Styled.div`
   font-family: 'Nunito Sans', sans-serif;
   cursor: pointer;
   flex-shrink: 0;
-  /* height: 100%; */
   display: grid;
   grid-template-columns: 0.2fr 1.5fr 1.5fr 0.7fr;
   grid-template-rows: 0.3fr 0.3fr 1.7fr 1.7fr;
@@ -28,20 +27,19 @@ const CardContainer = Styled.div`
     "country country country country"
     "footer footer footer footer";
   transition: 0.3s;
-  /* width: 350px; */
-  width: 320px;
-  height: 450px;
+  width: 360px;
+  height: 480px;
   border-radius: 5%; 
   margin: 10px;
-  &:hover {
+  :hover {
     transform: scale(1.015);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
-  &&:hover ${SmallRight} {
+  :hover ${SmallRight} {
     background-color: #000;
     color: #fff;
   }
-  &&:hover ${Country} {
+  :hover ${Country} {
     opacity: 1;
   }
 `
