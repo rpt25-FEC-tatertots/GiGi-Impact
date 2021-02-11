@@ -4,6 +4,7 @@ import Header from './components/header.jsx';
 import Styled from 'styled-components';
 import Navbar from './components/navbar.jsx';
 import axios from 'axios';
+import ReviewsComponent from './components/reviewsComponent.jsx';
 
 const Wrapper = Styled.div`
   background-color: #fff;
@@ -15,14 +16,14 @@ const Wrapper = Styled.div`
 class App extends React.Component {
   constructor() {
     super();
-    
+
     this.state = {
       locations: [],
       materials: []
     }
     this.getProductById();
   }
-  
+
   getProductById() {
     let id = window.location.pathname;
     Promise.all([
@@ -43,10 +44,13 @@ class App extends React.Component {
   render() {
     const { locations, materials } = this.state;
     return (
-      <Wrapper>
-        <Header></Header>
-        <Navbar locations={ locations } materials={ materials }></Navbar>
-      </Wrapper>
+      <>
+        <ReviewsComponent />
+        <Wrapper>
+          <Header></Header>
+          <Navbar locations={locations} materials={materials}></Navbar>
+        </Wrapper>
+      </>
     )
   }
 }
