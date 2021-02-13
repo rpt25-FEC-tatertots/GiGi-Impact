@@ -1,6 +1,6 @@
 # Project Name
 
-> Title-Banner Service for rpt25-FEC-tater-tots
+> Sourcing Services for rpt25-FEC-tater-tots
 
 ## Related Projects
 
