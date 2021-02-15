@@ -1,13 +1,28 @@
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Hello123',
-  // password: '',
-  database: 'sourcing'
-});
+// var connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'Hello123',
+//   // password: '',
+//   database: 'sourcing'
+// });
 
+var mysqlHost = process.env.MYSQL_HOST || 'localhost';
+var mysqlPort = process.env.MYSQL_PORT || '3306';
+var mysqlUser = process.env.MYSQL_USER || 'root';
+var mysqlPass = process.env.MYSQL_PASS || 'Password123';
+var mysqlDB = process.env.MYSQL_DB || 'sourcing';
+
+var connectionOptions = {
+  host: mysqlHost,
+  port: mysqlPort,
+  user: mysqlUser,
+  password: mysqlPass,
+  database: mysqlDB
+}
+
+var connection = mysql.createConnection(connectionOptions);
 connection.connect();
 
 const insertIntoProducts = (dataSet) => {
