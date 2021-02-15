@@ -26,7 +26,7 @@
 > If you have password for your MySQL, replace line 6 in database > index.js file with your password. If not, comment out line 6 and uncomment line 7.
 > Run the following in your terminal
 if you have a password, change Hello123 to your own password.
-  mysql -u root -pHello123< database/schema.sql
+  mysql -u root -pPassword123!< database/schema.sql
 if not, run
   mysql -u root -p < database/schema.sql
 >Run the following in a terminal
