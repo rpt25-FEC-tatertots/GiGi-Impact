@@ -42,7 +42,8 @@ const Nav = Styled.li`
   vertical-align: baseline;
   background: transparent;
   margin: 5px 20px;
-  transition: transform 0.5s; 
+  transition: transform 0.3s; 
+  cursor: pointer;
   &:hover {
     transform: scale(1.03);
   };
