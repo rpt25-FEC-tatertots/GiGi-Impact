@@ -7,8 +7,8 @@ const Blob = Styled.div`
   padding: 0;
   grid-area: blob;
   grid-column-start: 2;
-  width: 180px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   background: url(${props => props.url});
   background-size: cover;
   animation: animate 20s linear infinite;
@@ -33,26 +33,28 @@ const MatName = Styled.p`
   font-size: 1.5rem;
   font-weight: bold; 
   margin: 5%;
+  max-width: 90%;
 `
 const MatDesc = Styled(MatName)`
   font-family: 'Nunito Sans', sans-serif;
   grid-area: MatDesc;
   font-size: .75rem;
   font-weight: normal;
+  max-width: 90%;
 `
 const Program = Styled(SmallLeft)`
   grid-area: LeftButton;
   grid-column-start: 1;
-  margin: 0px 25px 45px 25px;
-  padding: 5px 20px;
+  margin: 15%;
+  padding: 5px;
   background-color: transparent;
 `
 const LearnMore = Styled(SmallRight)`
   grid-area = RightButton;
   grid-column-start: 2;
   grid-row-start: 4;
-  margin: 0px 25px 45px 25px;
-  padding: 5px 20px;
+  margin: 15%;
+  padding: 5px;
 `
 const MatInfo = Styled.div`
   font-family: 'Nunito Sans', sans-serif;
@@ -64,11 +66,13 @@ const MatInfo = Styled.div`
   text-align: center;
   grid-area: blob;
   margin-top: 0 5px 20px 5px;
+  max-width: 80%;
+  margin: 5%;
 `
 const Card = Styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1.6fr 0.4fr 1.25fr 0.75fr;
+  grid-template-rows: 1.4fr 0.6fr 1.25fr 0.75fr;
   gap: 0px 0px;
   overflow: hidden;
   grid-template-areas:
@@ -79,10 +83,10 @@ const Card = Styled.div`
   background-color: #f0f4f5;
   font-family: 'Nunito Sans', sans-serif;
   cursor: pointer;
-  border-radius: 5%;
+  border-radius: 9px;
   margin: 10px;
-  height: 480px;
-  max-width: 360px;
+  height: 370px;
+  max-width: 260px;
   flex: 1 0 22%;
   :hover ${LearnMore} {
     background-color: #000;
@@ -100,6 +104,8 @@ const Card = Styled.div`
     margin-right: 10px;
     background: url(${props => props.url});
     z-index: 10;
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out; 
     opacity: 0.8;
     ${MatDesc} {
       opacity: 0;
@@ -108,7 +114,7 @@ const Card = Styled.div`
       opacity: 0;
     };
     ${Blob} {
-      opacity: 0;
+      opacity: 0; 
     };
     ${Program} {
       background: transparent;

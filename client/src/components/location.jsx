@@ -18,19 +18,19 @@ const CardContainer = Styled.div`
   cursor: pointer;
   flex-shrink: 0;
   display: grid;
-  grid-template-columns: 0.2fr 1.5fr 1.5fr 0.7fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 0.3fr 0.3fr 1.7fr 1.7fr;
   gap: 0px 0px;
   grid-template-areas:
-    "img img img img"
-    "company company company company"
-    "country country country country"
-    "footer footer footer footer";
+    "img"
+    "company"
+    "country"
+    "footer";
   transition: 0.3s;
-  width: 360px;
-  height: 480px;
-  border-radius: 5%; 
-  margin: 10px;
+  max-width: 260px;
+  height: 370px;
+  border-radius: 9px;
+  margin: 0 10px;
   :hover {
     transform: scale(1.015);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
