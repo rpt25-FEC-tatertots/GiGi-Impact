@@ -8,7 +8,7 @@ const Blob = Styled.div`
   grid-area: blob;
   grid-column-start: 2;
   width: 140px;
-  height: 140px;
+  height: 120px;
   background: url(${props => props.url});
   background-size: cover;
   animation: animate 20s linear infinite;
