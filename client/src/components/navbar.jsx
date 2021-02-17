@@ -57,7 +57,6 @@ const Box = Styled.div`
   align-items: center;
   margin: 0;
   padding: 0;
-  background-color: olive;
 `
 
 class Navbar extends React.Component {
