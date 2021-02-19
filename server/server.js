@@ -1,6 +1,6 @@
 const app = require('./index.js');
-
-// console.log(app);
+const compression = require('compression');
+app.use(compression());
 
 let port = process.env.PORT || 5002; 
 
