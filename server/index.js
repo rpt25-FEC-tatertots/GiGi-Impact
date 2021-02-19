@@ -1,7 +1,9 @@
 const express = require('express');
+const compression = require('compression');
 const db = require('../database/index.js');
 
 let app = express();
+app.use(compression());
 app.use('/:productID', express.static(__dirname + '/../client/dist'));
 app.use(express.static(__dirname + '/../client/dist'));
 
