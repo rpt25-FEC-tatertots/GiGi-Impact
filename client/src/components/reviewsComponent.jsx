@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Styled from 'styled-components';
 
 const ReviewsContainer = Styled.div`
