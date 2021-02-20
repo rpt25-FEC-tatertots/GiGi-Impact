@@ -2,6 +2,8 @@ import React from 'react';
 import Styled from 'styled-components';
 
 const ReviewsContainer = Styled.div`
+  width: 100vw;
+  height: 150px;
   background-color: black;
   color: white;
   font-family: Nunito Sans;
@@ -12,6 +14,8 @@ const ReviewsContainer = Styled.div`
 const AllContentContainer = Styled.div`
   display: flex;
   justify-content: center;
+  max-width: 100%;
+  max-height: 150px;
 `;
 
 const ReviewsTitleStyle = Styled.div`
