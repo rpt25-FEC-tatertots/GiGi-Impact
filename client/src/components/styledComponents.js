@@ -12,7 +12,7 @@ const SliderCardContainer = Styled.div`
   margin: 0;
   position: relative;
   overflow-x: hidden;
-  max-height: 400px;
+  max-height: 410px;
   align-items: center;
   margin-top: 5px;
 `
@@ -21,7 +21,7 @@ const Carousel = Styled.div`
   align-items: center;
   flex-direction: row;
   overflow: visible;
-  height: 380px;
+  height: 390px;
   overflow-x: hidden;
   /* box-sizing: content-box; */
   margin-left: 18px;
