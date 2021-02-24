@@ -5,6 +5,7 @@ import Styled from 'styled-components';
 import Navbar from './components/navbar.jsx';
 import axios from 'axios';
 import ReviewsComponent from './components/reviewsComponent.jsx';
+import Footprint from './components/footprint.jsx';
 
 const Wrapper = Styled.div`
   background-color: #fff;
@@ -19,9 +20,11 @@ class App extends React.Component {
 
     this.state = {
       locations: [],
-      materials: []
+      materials: [],
+      windowSize: window.innerWidth
     }
     this.getProductById();
+    this.handleResize = this.handleResize.bind(this);
   }
 
   getProductById() {
@@ -40,16 +43,28 @@ class App extends React.Component {
       })
       .catch(error => console.log('error in index.js for Promise all', error))
   }
+  handleResize() {
+    this.setState({ windowSize: window.innerWidth });
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.addEventListener('resize', null);
+  }
 
   render() {
-    const { locations, materials } = this.state;
+    const { locations, materials, windowSize } = this.state;
     return (
       <>
         <ReviewsComponent />
         <Wrapper>
-          <Header></Header>
+          <Header windowSize={windowSize}></Header>
           <Navbar locations={locations} materials={materials}></Navbar>
         </Wrapper>
+        <Footprint windowSize={windowSize}/>
       </>
     )
   }
