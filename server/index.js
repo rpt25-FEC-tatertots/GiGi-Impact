@@ -5,7 +5,7 @@ const db = require('../database/index.js');
 let app = express();
 app.use(compression());
 app.use('/:productID', express.static(__dirname + '/../client/dist'));
-app.use(express.static(`https://sourcingbucket.s3-us-west-1.amazonaws.com/index.html`));
+app.use(express.static(__dirname + '/../client/dist'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
