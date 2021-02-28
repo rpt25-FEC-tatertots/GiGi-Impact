@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/header.jsx';
 import Styled from 'styled-components';
-import Navbar from './components/navbar.jsx';
+// import Navbar from './components/navbar.jsx';
+const Navbar = React.lazy(() => import('./components/navbar.jsx'));
 import axios from 'axios';
 import ReviewsComponent from './components/reviewsComponent.jsx';
 import Footprint from './components/footprint.jsx';
@@ -62,9 +63,11 @@ class App extends React.Component {
         <ReviewsComponent />
         <Wrapper>
           <Header windowSize={windowSize}></Header>
-          <Navbar locations={locations} materials={materials}></Navbar>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Navbar locations={locations} materials={materials}></Navbar>
+          </Suspense>
         </Wrapper>
-        <Footprint windowSize={windowSize}/>
+        <Footprint windowSize={windowSize} />
       </>
     )
   }
